@@ -2,6 +2,7 @@
   Web service client
 
  This sketch connects to a web service to send messages indicating andon control inputs
+ v2.0.0 - add controls for lights for devices equipped with relays
  v1.8.0 - add queries for control status.  Work to improve garbage in telnet messages with string.trim().  use F() to reduce string cost in RAM
  v1.7.4 - corrected :STATUS? telnet response
  v1.7.3 - dead branch
@@ -34,25 +35,33 @@
 
 //8-pin header
 //pins 0 and 1 are reserved for serial
-#define GREEN_SWITCH 3
 #define BLUE_SWITCH 2
+#define GREEN_SWITCH 3
 #define YELLOW_SWITCH 4
 //#define SS_SD_CARD   4
-#define RED_SWITCH 7
 #define RED_LED 5
 #define GREEN_LED 6
+#define RED_SWITCH 7
 
 //10-pin header
 #define RED_BUTTON 8
 #define GREEN_BUTTON 9
 #define SS_ETHERNET 10 //reserved for ethernet
 
-const String versionID = "T03801 v1.8.0";
+//analog pins as digital
+#define RED_LIGHT A0
+#define BLUE_LIGHT A1
+#define YELLOW_LIGHT A2
+#define GREEN_LIGHT A3
+
+
+const String versionID = "T03801 v2.0.0";
 const char commandList[] PROGMEM = {":CLIENT? - This command returns the IP address for the andon controller\r\n"
 ":CONTROL:RED_LIGHT:ON/OFF/FLASH - This command sets the red light to on, off or flash based on the last argument\r\n"
 ":CONTROL:YELLOW_LIGHT:ON/OFF/FLASH - This command sets the yellow light to on, off or flash based on the last argument\r\n"
 ":CONTROL:BLUE_LIGHT:ON/OFF/FLASH - This command sets the blue light to on, off or flash based on the last argument\r\n"
 ":CONTROL:GREEN_LIGHT:ON/OFF/FLASH - This command sets the green light to on, off or flash based on the last argument\r\n"
+":CONTROL:BUZZER:ON/OFF/FLASH - This command sets the buzzer to on, off or flash based on the last argument\r\n"
 ":MAC? - This command returns the MAC address for the andon controller\r\n"
 ":MAC:aa-bb-cc-dd-ee-ff - This command sets the MAC address for the andon controller to aa-bb-cc-dd-ee-ff\r\n"
 ":PORT? - This command returns the port number for the web service server\r\n"
@@ -150,12 +159,18 @@ void setup()
   //leds
   pinMode(GREEN_LED, OUTPUT);
   pinMode(RED_LED, OUTPUT);
+  pinMode(RED_LIGHT, OUTPUT);
+  pinMode(GREEN_LIGHT, OUTPUT);
+  pinMode(YELLOW_LIGHT, OUTPUT);
+  pinMode(BLUE_LIGHT, OUTPUT);
+  
   //switches
   pinMode(GREEN_SWITCH, INPUT_PULLUP);
   pinMode(BLUE_SWITCH, INPUT_PULLUP);
   pinMode(YELLOW_SWITCH, INPUT_PULLUP);
   pinMode(RED_SWITCH, INPUT_PULLUP);
 
+  
   analogWrite(RED_LED, redBright);
   analogWrite(GREEN_LED, greenBright);
 
