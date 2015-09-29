@@ -1,0 +1,6 @@
+c:\users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\bin\RemotePower.dll
+c:\users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\bin\RemotePower.pdb
+c:\users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Debug\ResolveAssemblyReference.cache
+c:\users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Debug\RemotePower.dll
+c:\users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Debug\RemotePower.pdb
+C:\Users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\bin\App_Data\XMLFilePowerControlComputers.xml

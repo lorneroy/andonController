@@ -1,0 +1,5 @@
+C:\Users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\bin\RemotePower.dll
+C:\Users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\bin\RemotePower.pdb
+C:\Users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Release\RemotePower.dll
+C:\Users\usd33129\documents\visual studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Release\RemotePower.pdb
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\RemotePower\obj\Release\RemotePower.csprojResolveAssemblyReference.cache

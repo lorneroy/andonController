@@ -50,18 +50,20 @@
 
 //analog pins as digital
 #define RED_LIGHT A0
-#define BLUE_LIGHT A1
-#define YELLOW_LIGHT A2
-#define GREEN_LIGHT A3
+#define YELLOW_LIGHT A1
+#define GREEN_LIGHT A2
+#define BLUE_LIGHT A3
+#define BUZZER A4
+
 
 
 const String versionID = "T03801 v2.0.0";
 const char commandList[] PROGMEM = {":CLIENT? - This command returns the IP address for the andon controller\r\n"
-":CONTROL:RED_LIGHT:ON/OFF/FLASH - This command sets the red light to on, off or flash based on the last argument\r\n"
-":CONTROL:YELLOW_LIGHT:ON/OFF/FLASH - This command sets the yellow light to on, off or flash based on the last argument\r\n"
-":CONTROL:BLUE_LIGHT:ON/OFF/FLASH - This command sets the blue light to on, off or flash based on the last argument\r\n"
-":CONTROL:GREEN_LIGHT:ON/OFF/FLASH - This command sets the green light to on, off or flash based on the last argument\r\n"
-":CONTROL:BUZZER:ON/OFF/FLASH - This command sets the buzzer to on, off or flash based on the last argument\r\n"
+":CONTROL:RED_LIGHT:ON (or OFF) - This command sets the red light to on, off or flash based on the last argument\r\n"
+":CONTROL:YELLOW_LIGHT:ON (or OFF) - This command sets the yellow light to on, off or flash based on the last argument\r\n"
+":CONTROL:BLUE_LIGHT:ON (or OFF) - This command sets the blue light to on, off or flash based on the last argument\r\n"
+":CONTROL:GREEN_LIGHT:ON (or OFF) - This command sets the green light to on, off or flash based on the last argument\r\n"
+":CONTROL:BUZZER:ON (or OFF) - This command sets the buzzer to on, off or flash based on the last argument\r\n"
 ":MAC? - This command returns the MAC address for the andon controller\r\n"
 ":MAC:aa-bb-cc-dd-ee-ff - This command sets the MAC address for the andon controller to aa-bb-cc-dd-ee-ff\r\n"
 ":PORT? - This command returns the port number for the web service server\r\n"
@@ -156,14 +158,15 @@ void setup()
   //buttons
   pinMode(GREEN_BUTTON, INPUT_PULLUP);
   pinMode(RED_BUTTON, INPUT_PULLUP);
-  //leds
+  //leds, tower lights, and buzzer
   pinMode(GREEN_LED, OUTPUT);
   pinMode(RED_LED, OUTPUT);
   pinMode(RED_LIGHT, OUTPUT);
   pinMode(GREEN_LIGHT, OUTPUT);
   pinMode(YELLOW_LIGHT, OUTPUT);
   pinMode(BLUE_LIGHT, OUTPUT);
-  
+  pinMode(BUZZER, OUTPUT);
+    
   //switches
   pinMode(GREEN_SWITCH, INPUT_PULLUP);
   pinMode(BLUE_SWITCH, INPUT_PULLUP);
@@ -173,6 +176,11 @@ void setup()
   
   analogWrite(RED_LED, redBright);
   analogWrite(GREEN_LED, greenBright);
+  digitalWrite(RED_LIGHT, HIGH);
+  digitalWrite(YELLOW_LIGHT, HIGH);
+  digitalWrite(BLUE_LIGHT, HIGH);
+  digitalWrite(GREEN_LIGHT, HIGH);
+  digitalWrite(BUZZER, HIGH);
 
   //initialize switch status bits
   greenButtonStatus = digitalRead(GREEN_BUTTON);
@@ -419,10 +427,12 @@ void loop()
       if (greenSwitchStatus == HIGH)
       {
         controlState = "off";
+        digitalWrite(GREEN_LIGHT, HIGH);
       }
       else
       {
         controlState = "on";
+        digitalWrite(GREEN_LIGHT, LOW);
       }
       Serial.print(F("green_switch turned to "));
       Serial.println(controlState);
@@ -449,10 +459,12 @@ void loop()
       if (redSwitchStatus == HIGH)
       {
         controlState = "off";
+        digitalWrite(RED_LIGHT, HIGH);
       }
       else
       {
         controlState = "on";
+        digitalWrite(RED_LIGHT, LOW);
       }
       Serial.print(F("red_switch turned to "));
       Serial.println(controlState);
@@ -479,10 +491,12 @@ void loop()
       if (yellowSwitchStatus == HIGH)
       {
         controlState = "off";
+        digitalWrite(YELLOW_LIGHT, HIGH);
       }
       else
       {
         controlState = "on";
+        digitalWrite(YELLOW_LIGHT, LOW);
       }
       Serial.print(F("yellow_switch turned to "));
       Serial.println(controlState);
@@ -508,10 +522,12 @@ void loop()
       if (blueSwitchStatus == HIGH)
       {
         controlState = "off";
+        digitalWrite(BLUE_LIGHT, HIGH);
       }
       else
       {
         controlState = "on";
+        digitalWrite(BLUE_LIGHT, LOW);
       }
       Serial.print(F("blue_switch turned to "));
       Serial.println(controlState);
@@ -572,7 +588,88 @@ void loop()
         thisServer.println();
       }
     }
- 
+
+    //control actions
+    else if(inputString == ":CONTROL:RED_LIGHT:ON"){
+      digitalWrite(RED_LIGHT, LOW);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+    
+    else if(inputString == ":CONTROL:RED_LIGHT:OFF"){
+      digitalWrite(RED_LIGHT, HIGH);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+
+        else if(inputString == ":CONTROL:GREEN_LIGHT:ON"){
+      digitalWrite(GREEN_LIGHT, LOW);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+    
+    else if(inputString == ":CONTROL:GREEN_LIGHT:OFF"){
+      digitalWrite(GREEN_LIGHT, HIGH);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+
+    else if(inputString == ":CONTROL:YELLOW_LIGHT:ON"){
+      digitalWrite(YELLOW_LIGHT, LOW);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+    
+    else if(inputString == ":CONTROL:YELLOW_LIGHT:OFF"){
+      digitalWrite(YELLOW_LIGHT, HIGH);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+
+    else if(inputString == ":CONTROL:BLUE_LIGHT:ON"){
+      digitalWrite(BLUE_LIGHT, LOW);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+    
+    else if(inputString == ":CONTROL:BLUE_LIGHT:OFF"){
+      digitalWrite(BLUE_LIGHT, HIGH);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+
+    else if(inputString == ":CONTROL:BUZZER:ON"){
+      digitalWrite(BUZZER, LOW);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+
+        else if(inputString == ":CONTROL:BUZZER:OFF"){
+      digitalWrite(BUZZER, HIGH);
+      Serial.println("command complete");
+     if (telnetClient) {
+        thisServer.println("command complete");
+     }
+    }
+    
     //determine which control is being queried by looking at the next part of the string
     else if(inputString == ":STATUS:CONTROL:RED_BUTTON?"){
       Serial.println(redButtonStatus);

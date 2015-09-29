@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <computerGroup>
+    <name>Line 1</name>
+    <subnet>149.59.27.255</subnet>
+    <member>
+      <name>usdseafab1xx337</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-0c-73-e5</macAddress>
+      <description>station 4</description>
+    </member>
+    <member>
+      <name>usdseafab1xx350</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-0c-74-00</macAddress>
+      <description>station 3</description>
+    </member>
+    <member>
+      <name>usdseafab1xx345</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-13-af-c0</macAddress>
+      <description>station 2</description>
+    </member>
+    <member>
+      <name>usdseafab1xx338</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-13-af-f6</macAddress>
+      <description>station 1</description>
+    </member>
+    <member>
+      <name></name>
+      <type>group controller</type>
+      <macAddress>90-a2-da-e-2-66</macAddress>
+	  <control>
+		<name>red_switch</name>
+		<state>
+			<name>1</name>
+			<action>turn on group</action>
+			<action>email:lorne.roy@philips.com</action>
+		</state>
+		<state>
+			<name>0</name>
+		</state>
+	  </control>
+	  <control>
+		<name>green switch</name>
+		<state>
+			<name>1</name>
+			<action>email:lorne.roy@philips.com</action>
+		</state>
+		<state>
+			<name>0</name>
+			<action>email:lorne.roy@philips.com</action>
+		</state>
+	  </control>
+	  <control>
+		<name>green button</name>
+		<state>
+			<name>1</name>
+			<action>turn on group</action>
+		</state>
+		<state>
+			<name>0</name>
+			<action>email:lorne.roy@philips.com</action>
+		</state>
+	  </control>
+    </member>
+  </computerGroup>
+  <computerGroup>
+    <name>HS1 FAT</name>
+    <subnet>149.59.27.255</subnet>
+    <member>
+      <name>USDSEAFAB1XX373</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-0C-74-25</macAddress>
+      <description>FAT 01</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX374</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-16-14-7A</macAddress>
+      <description>FAT 02</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX375</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-D7</macAddress>
+      <description>FAT 03</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX376</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-E7</macAddress>
+      <description>FAT 04</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX377</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-0C-74-0A</macAddress>
+      <description>FAT 05</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX378</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-DE</macAddress>
+      <description>FAT 06</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX379</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-0C-74-0E</macAddress>
+      <description>FAT 07</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX380</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-FA</macAddress>
+      <description>FAT 09</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX381</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-0C-74-04</macAddress>
+      <description>FAT 10</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX382</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-16-41-6B</macAddress>
+      <description>FAT 11</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX383</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-11-DD-3E</macAddress>
+      <description>FAT 12</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX384</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-D4</macAddress>
+      <description>FAT 13</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX386</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-16-14-6C</macAddress>
+      <description>FAT 14</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX385</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-0C-73-EE</macAddress>
+      <description>FAT 16</description>
+    </member>
+    <member>
+      <name>USDSEAFAB1XX387</name>
+      <type>computer</type>
+      <macAddress>6C-3B-E5-13-8F-E3</macAddress>
+      <description>FAT 17</description>
+    </member>
+  </computerGroup>
+  <computerGroup>
+    <name>Line 16</name>
+    <subnet>149.59.27.255</subnet>
+    <member>
+      <name>usdseafab1xx354</name>
+      <type>computer</type>
+      <macAddress>E8-39-35-5F-23-16</macAddress>
+      <description>final configuration</description>
+    </member>
+    <member>
+      <name>usdseafab1xx306</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-11-DD-23</macAddress>
+      <description>simulated use</description>
+    </member>    
+	<member>
+      <name>usdseafab1xx340</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-11-DA-FB</macAddress>
+      <description>labeling</description>
+    </member>    
+	<member>
+      <name>usdseafab1xx326</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-0C-73-E9</macAddress>
+      <description>kitting</description>
+    </member>
+    <member>
+      <name>usdseafab1xx315</name>
+      <type>computer</type>
+      <macAddress>6c-3b-e5-16-41-7F</macAddress>
+      <description>final inspection</description>
+    </member>  
+  </computerGroup>
+</root>

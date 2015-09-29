@@ -1,0 +1,5 @@
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\PowerControlService\bin\Release\PowerControlService.exe
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\PowerControlService\bin\Release\PowerControlService.pdb
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\PowerControlService\obj\x86\Release\PowerControlService.exe
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\PowerControlService\obj\x86\Release\PowerControlService.pdb
+C:\Users\USD33129\Documents\Visual Studio 2010\Projects\RemotePowerSolution\PowerControlService\obj\x86\Release\PowerControlService.csprojResolveAssemblyReference.cache
